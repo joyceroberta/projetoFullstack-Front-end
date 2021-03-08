@@ -1,1 +1,3 @@
-# projetoFullstack-Front-end
+# Projeto Full Stack - Photomet
+
+Criação de um aplicativo para compartilhamento de fotos.
