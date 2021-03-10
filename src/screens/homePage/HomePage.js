@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useForm } from "../../components/hooks/useForm";
 import { signUp } from "../../constants/User";
 import {goToLogin} from "../../routers/coordinator"
+import { Button } from "../loginPage/styled";
 import {DivForm, P} from "./styled"
 
 function HomePage() {
@@ -38,9 +39,9 @@ function HomePage() {
               onChange={handleInputChange}
             />
 
-            
+            <br />
 
-            <label>Nickname:</label>
+            <label>Nickname: </label>
             <input
               type="text"
               placeholder="Nickname"
@@ -49,9 +50,9 @@ function HomePage() {
               onChange={handleInputChange}
             />
 
-            
+            <br />
 
-            <label>Email:</label>
+            <label>Email: </label>
             <input
               type="email"
               placeholder="E-mail"
@@ -60,9 +61,9 @@ function HomePage() {
               onChange={handleInputChange}
             />
 
-            
+            <br />
 
-            <label>Senha:</label>
+            <label>Senha: </label>
             <input
               type="password"
               placeholder="Senha"
@@ -71,9 +72,9 @@ function HomePage() {
               onChange={handleInputChange}
             />
 
-            
+            <br />
 
-            <label>Foto do Perfil</label>
+            <label>Foto do Perfil: </label>
             <input
               type="text"
               placeholder="Imagem do Perfil"
@@ -82,9 +83,9 @@ function HomePage() {
               onChange={handleInputChange}
             />
 
-            
+            <br />
 
-            <button>Cadastar</button>
+            <Button>Cadastar</Button>
           </form>
 
           <div>

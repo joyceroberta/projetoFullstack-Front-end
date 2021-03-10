@@ -21,7 +21,7 @@ function LoginPage() {
   };
 
   return (
-    <DivContainer>
+    <div>
       <h3>Login</h3>
       <form onSubmit={handleSubmit}>
         <input
@@ -39,14 +39,14 @@ function LoginPage() {
           value={form.password}
           onChange={handleInputChange}
         />
-
+        
         <Button type={"submit"}>Login</Button>
       </form>
 
       <P onClick={() => goToSignup(history)}>
         "Ainda não faz parte da nossa seita? Clique aqui e faça o seu cadastro."
       </P>
-    </DivContainer>
+    </div>
   );
 }
 

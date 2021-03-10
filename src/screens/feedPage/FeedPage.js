@@ -29,6 +29,8 @@ function FeedPage() {
         <Button onClick={() => goToCreate(history)}> Criar Post </Button>
       </DivButtons>
 
+      <br />
+
       {posts.map((post) => {
         return (
           <PostCard

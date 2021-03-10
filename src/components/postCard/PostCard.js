@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { goToPost } from "../../routers/coordinator";
-import { Pictures, ProfileImg, DivProfile, DivPost, CardContainer } from "./styled";
+import { Pictures, ProfileImg, DivProfile, DivPost, CardContainer, Hr, P } from "./styled";
 
 function PostCard(props) {
   const history = useHistory();
@@ -12,12 +12,15 @@ function PostCard(props) {
         <h4>{props.nickname}</h4>
       </DivProfile>
 
+      <br />
+
+ 
       <DivPost>
         <Pictures src={props.file} />
         <p>{props.subtitle}</p>
       </DivPost>
 
-      <p onClick={() => goToPost(history, props.id)}>Detalhes</p>
+      <P onClick={() => goToPost(history, props.id)}>Detalhes</P>
     </CardContainer>
   );
 }

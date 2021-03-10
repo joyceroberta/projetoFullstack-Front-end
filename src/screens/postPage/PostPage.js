@@ -2,9 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { useProtectPage } from "../../components/hooks/useProtectPage";
-import { DivPost, DivProfile, Pictures, ProfileImg } from "../../components/postCard/styled";
 import { baseUrlPost } from "../../constants/constants";
 import { goToFeed } from "../../routers/coordinator";
+import { DivPost, DivProfile, P, Pictures, ProfileImg, ImgDiv } from "./styled";
 
 function PostPage(props) {
   const history = useHistory();
@@ -44,14 +44,17 @@ function PostPage(props) {
             <ProfileImg src={details.profilePicture} />
           </DivProfile>
           <DivPost>
-            <Pictures src={details.file} />
+            <ImgDiv>
+              <Pictures src={details.file} />
+            </ImgDiv>
+
             <p>{details.subtitle}</p>
             <p>{details.date}</p>
             <p>{details.collection}</p>
             <p>#{details.name}</p>
           </DivPost>
 
-          <p onClick={() => goToFeed(history)}>Voltar para o feed</p>
+          <P onClick={() => goToFeed(history)}>Voltar para o feed</P>
         </div>
       )}
     </div>

@@ -2,7 +2,9 @@ import React from "react";
 import { useHistory } from "react-router";
 import { useForm } from "../../components/hooks/useForm";
 import { createPost } from "../../constants/Post";
-import {goToLogin} from "../../routers/coordinator"
+import {goToFeed, goToLogin} from "../../routers/coordinator"
+import { Button } from "../loginPage/styled";
+import {DivButtons} from "./styled"
 
 
 function CreatePostPage() {
@@ -28,7 +30,11 @@ function CreatePostPage() {
 
   return (
     <div>
-      <button onClick={() => logout(history)}>Logout</button>
+      <DivButtons>
+        <Button onClick={() => logout(history)}>Logout</Button>
+
+        <Button onClick={() => goToFeed(history)}>Voltar</Button>
+      </DivButtons>
 
       <h2>Adicionar Foto</h2>
 
@@ -61,7 +67,7 @@ function CreatePostPage() {
           onChange={handleInputChange}
         />
 
-        <button type={"submit"}>Publicar</button>
+        <Button type={"submit"}>Publicar</Button>
       </form>
     </div>
   );
