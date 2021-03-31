@@ -15,5 +15,5 @@ export const goToFeed = (history) => {
 };
 
 export const goToPost = (history, id) => {
-  history.push(`/posts/${id}`);
+  history.push(`/post/${id}`);
 };

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useForm } from "../../components/hooks/useForm";
 import { login } from "../../constants/User";
 import { goToSignup } from "../../routers/coordinator";
-import { ButtonSingup } from "./styled";
+import { DivContainer, P, Button } from "./styled";
 
 function LoginPage() {
   const history = useHistory();
@@ -39,13 +39,13 @@ function LoginPage() {
           value={form.password}
           onChange={handleInputChange}
         />
-
-        <button>Login</button>
+        
+        <Button type={"submit"}>Login</Button>
       </form>
 
-      <ButtonSingup onClick={() => goToSignup(history)}>
+      <P onClick={() => goToSignup(history)}>
         "Ainda não faz parte da nossa seita? Clique aqui e faça o seu cadastro."
-      </ButtonSingup>
+      </P>
     </div>
   );
 }

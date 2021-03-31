@@ -3,8 +3,10 @@ import { useHistory } from "react-router-dom";
 import { useRequestData } from "../../components/hooks/useRequestData";
 import {useProtectPage} from "../../components/hooks/useProtectPage"
 import { baseUrlPost } from "../../constants/constants";
-import { goToLogin } from "../../routers/coordinator";
-import PostCard from "../../components/PostCard"
+import { goToCreate, goToLogin } from "../../routers/coordinator";
+import PostCard from "../../components/postCard/PostCard"
+import { DivButtons } from "./styled";
+import { Button } from "../loginPage/styled";
 
 function FeedPage() {
 
@@ -21,25 +23,28 @@ function FeedPage() {
 
   return (
     <div>
-      <button onClick={() => logout(history)}>Logout</button>
-      {posts.map((post) =>{
-        return(
+      <DivButtons>
+        <Button onClick={() => logout(history)}>Logout</Button>
+
+        <Button onClick={() => goToCreate(history)}> Criar Post </Button>
+      </DivButtons>
+
+      <br />
+
+      {posts.map((post) => {
+        return (
           <PostCard
             id={post.id}
             subtitle={post.subtitle}
             file={post.file}
-            date={post.date}
             name={post.name}
             collection={post.collection}
             author_id={post.author_id}
             nickname={post.nickname}
             profilePicture={post.profilePicture}
           />
-        )
+        );
       })}
-
-
-      
     </div>
   );
 }
